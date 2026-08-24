@@ -51,6 +51,9 @@ without OAuth can pass an API key instead: `Authorization: Bearer pf_live_…`.
 | `generate_image` | prompt → hosted image URL (+cost and balance in the reply) |
 | `edit_image` | natural-language edit of a previous generation by its `img_…` id |
 | `list_models` | models with price, latency, and what each is best for |
+| `render_template` | typeset card (quote/post) from a template — $0.02, ~2 s, sharp type · *remote server; npx parity coming in 0.2* |
+| `list_templates` | card templates with slots, style axes and exact prices · *remote server* |
+| `upload_asset` | upload a PNG/JPEG (≤5 MB) as a reusable asset (e.g. a card avatar) · *remote server* |
 | `get_balance` | current prepaid balance |
 
 Replies carry a hosted URL, never base64 — your agent's context stays small.
