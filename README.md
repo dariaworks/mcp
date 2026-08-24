@@ -7,7 +7,26 @@ your agent just asks for an image.
 
 Works with **Claude Desktop, Claude Code, Cursor, Windsurf**, and any MCP client.
 
-## Quickstart (≈1 minute)
+## Quickstart — no terminal needed (≈1 minute)
+
+The remote server is the easiest path: paste one URL, sign in with your
+Pixfaro account in the browser window that opens. No API key in any file.
+
+**Claude** (claude.ai / Claude Desktop, any plan): **Settings → Connectors →
+Add custom connector** → URL `https://mcp.pixfaro.com/mcp` → sign in.
+(Team/Enterprise: an org Owner adds it once under **Organization settings →
+Connectors → Custom → Web**.)
+
+**Cursor**: [**Add to Cursor →**](https://cursor.com/install-mcp?name=pixfaro&config=eyJ1cmwiOiJodHRwczovL21jcC5waXhmYXJvLmNvbS9tY3AifQ%3D%3D)
+— or **Cursor Settings → MCP → Add new MCP server** (type **URL**, address
+`https://mcp.pixfaro.com/mcp`); Cursor runs the OAuth flow itself.
+
+**ChatGPT** (Pro/Plus/Business/Edu): **Settings → enable Developer mode**
+(connectors live under **Plugins** since the July 2026 rename, formerly
+**Connectors → Advanced**) → add a custom connector with URL
+`https://mcp.pixfaro.com/mcp`, OAuth.
+
+## Quickstart — command line / config file
 
 1. Get an API key at [pixfaro.com](https://pixfaro.com) and top up (no subscription).
 2. Add the server to your MCP client config:
@@ -32,16 +51,12 @@ For Claude Code:
 claude mcp add pixfaro -e PIXFARO_KEY=pf_live_… -- npx -y @pixfaro/mcp
 ```
 
-### Remote server (no install, OAuth)
+Clients that speak streamable HTTP can also take the remote form in the same
+file — no key, OAuth on first use:
 
-On claude.ai, Claude Desktop, or any client that speaks streamable HTTP, add the
-remote server instead — no npm, no key in a config file:
-
-```
-https://mcp.pixfaro.com/mcp
-```
-
-The client runs the OAuth flow; you sign in with your Pixfaro account. Clients
+```json
+{ "mcpServers": { "pixfaro": { "url": "https://mcp.pixfaro.com/mcp" } } }
+``` Clients
 without OAuth can pass an API key instead: `Authorization: Bearer pf_live_…`.
 
 ## Tools
