@@ -19,7 +19,7 @@ This package is a thin alias for the CLI that ships in
 also contains the Pixfaro MCP server for Claude Desktop, Claude Code, Cursor,
 Windsurf, and any MCP client.
 
-- Repo: [github.com/pixfaro/mcp](https://github.com/pixfaro/mcp)
+- Repo: [github.com/dariaworks/mcp](https://github.com/dariaworks/mcp)
 - Docs: [pixfaro.com](https://pixfaro.com)
 
 MIT © Pixfaro
